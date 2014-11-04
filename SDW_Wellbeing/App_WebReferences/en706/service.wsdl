@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://en706.remotestuff.co.uk/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://en706.remotestuff.co.uk/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://en706.remotestuff.co.uk/">
+      <s:element name="ReadUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyPasswordResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadExerciseTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadExerciseTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadExerciseTypesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadExercise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadExerciseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadExerciseResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadWeight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadWeightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadWeightResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteExercise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteExerciseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteExerciseResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteWeight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteWeightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteWeightResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReadUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadUser" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteUser" />
+  </wsdl:message>
+  <wsdl:message name="WriteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyPassword" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadExerciseTypes" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadExerciseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadExercise" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadExerciseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadWeightSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadWeight" />
+  </wsdl:message>
+  <wsdl:message name="ReadWeightSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadWeightResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteExercise" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteExerciseResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteWeightSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteWeight" />
+  </wsdl:message>
+  <wsdl:message name="WriteWeightSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteWeightResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteUserHttpGetIn">
+    <wsdl:part name="userXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPasswordHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPasswordHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="oldPassword" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseTypesHttpGetIn" />
+  <wsdl:message name="ReadExerciseTypesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadWeightHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadWeightHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseHttpGetIn">
+    <wsdl:part name="userXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteWeightHttpGetIn">
+    <wsdl:part name="userXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteWeightHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteUserHttpPostIn">
+    <wsdl:part name="userXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPasswordHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPasswordHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="oldPassword" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseTypesHttpPostIn" />
+  <wsdl:message name="ReadExerciseTypesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadExerciseHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReadWeightHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadWeightHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseHttpPostIn">
+    <wsdl:part name="userXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteWeightHttpPostIn">
+    <wsdl:part name="userXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteWeightHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="ReadUser">
+      <wsdl:input message="tns:ReadUserSoapIn" />
+      <wsdl:output message="tns:ReadUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <wsdl:input message="tns:WriteUserSoapIn" />
+      <wsdl:output message="tns:WriteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <wsdl:input message="tns:VerifyPasswordSoapIn" />
+      <wsdl:output message="tns:VerifyPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <wsdl:input message="tns:ReadExerciseTypesSoapIn" />
+      <wsdl:output message="tns:ReadExerciseTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <wsdl:input message="tns:ReadExerciseSoapIn" />
+      <wsdl:output message="tns:ReadExerciseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <wsdl:input message="tns:ReadWeightSoapIn" />
+      <wsdl:output message="tns:ReadWeightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <wsdl:input message="tns:WriteExerciseSoapIn" />
+      <wsdl:output message="tns:WriteExerciseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <wsdl:input message="tns:WriteWeightSoapIn" />
+      <wsdl:output message="tns:WriteWeightSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="ReadUser">
+      <wsdl:input message="tns:ReadUserHttpGetIn" />
+      <wsdl:output message="tns:ReadUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <wsdl:input message="tns:WriteUserHttpGetIn" />
+      <wsdl:output message="tns:WriteUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <wsdl:input message="tns:VerifyPasswordHttpGetIn" />
+      <wsdl:output message="tns:VerifyPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordHttpGetIn" />
+      <wsdl:output message="tns:ChangePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <wsdl:input message="tns:ReadExerciseTypesHttpGetIn" />
+      <wsdl:output message="tns:ReadExerciseTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <wsdl:input message="tns:ReadExerciseHttpGetIn" />
+      <wsdl:output message="tns:ReadExerciseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <wsdl:input message="tns:ReadWeightHttpGetIn" />
+      <wsdl:output message="tns:ReadWeightHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <wsdl:input message="tns:WriteExerciseHttpGetIn" />
+      <wsdl:output message="tns:WriteExerciseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <wsdl:input message="tns:WriteWeightHttpGetIn" />
+      <wsdl:output message="tns:WriteWeightHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="ReadUser">
+      <wsdl:input message="tns:ReadUserHttpPostIn" />
+      <wsdl:output message="tns:ReadUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <wsdl:input message="tns:WriteUserHttpPostIn" />
+      <wsdl:output message="tns:WriteUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <wsdl:input message="tns:VerifyPasswordHttpPostIn" />
+      <wsdl:output message="tns:VerifyPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordHttpPostIn" />
+      <wsdl:output message="tns:ChangePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <wsdl:input message="tns:ReadExerciseTypesHttpPostIn" />
+      <wsdl:output message="tns:ReadExerciseTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <wsdl:input message="tns:ReadExerciseHttpPostIn" />
+      <wsdl:output message="tns:ReadExerciseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <wsdl:input message="tns:ReadWeightHttpPostIn" />
+      <wsdl:output message="tns:ReadWeightHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <wsdl:input message="tns:WriteExerciseHttpPostIn" />
+      <wsdl:output message="tns:WriteExerciseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <wsdl:input message="tns:WriteWeightHttpPostIn" />
+      <wsdl:output message="tns:WriteWeightHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadUser">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/ReadUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/WriteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/VerifyPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/ReadExerciseTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/ReadExercise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/ReadWeight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/WriteExercise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/WriteWeight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadUser">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/ReadUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/WriteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/VerifyPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/ReadExerciseTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/ReadExercise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/ReadWeight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/WriteExercise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/WriteWeight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ReadUser">
+      <http:operation location="/ReadUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <http:operation location="/WriteUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <http:operation location="/VerifyPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <http:operation location="/ReadExerciseTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <http:operation location="/ReadExercise" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <http:operation location="/ReadWeight" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <http:operation location="/WriteExercise" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <http:operation location="/WriteWeight" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ReadUser">
+      <http:operation location="/ReadUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteUser">
+      <http:operation location="/WriteUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPassword">
+      <http:operation location="/VerifyPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExerciseTypes">
+      <http:operation location="/ReadExerciseTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExercise">
+      <http:operation location="/ReadExercise" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadWeight">
+      <http:operation location="/ReadWeight" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExercise">
+      <http:operation location="/WriteExercise" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteWeight">
+      <http:operation location="/WriteWeight" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://en706.remotestuff.co.uk/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://en706.remotestuff.co.uk/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://en706.remotestuff.co.uk/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://en706.remotestuff.co.uk/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
