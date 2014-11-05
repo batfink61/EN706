@@ -88,7 +88,13 @@
         </div>
     </div>
     <div class="footer">
-        <h1>Footer information lives here this is global</h1>
+        <ul>
+        <li>Put any other links in here</li>
+        <li>Insert Name of project</li>
+        <li>Inset Name of Team</li>
+        <li>Copright 2014</li>
+
+        </ul>
     </div>
 </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
