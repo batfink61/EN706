@@ -10,9 +10,7 @@
     <h1>Welcome, activity logger</h1>
     <p>Posuere tellus tempus at ullamcorper amet in praesent varius ipsum mi mi adipiscing porttitor. Dolor lacinia id in varius donec diam egestas tempus. Viverra facilisis pellentesque at egestas facilisis metus orci tellus sollicitudin. Mi hendrerit iaculis viverra facilisis enim hendrerit id id ultrices at posuere tincidunt tempus facilisis ligul a. Tempus id hendrerit id morbi diam amet dolor hendrerit viverra dignissim praesent.    
     </p>
-    
-    
-    </div>
+  </div>
   <div class="col-md-4">
 
                     <div class="form-group">
