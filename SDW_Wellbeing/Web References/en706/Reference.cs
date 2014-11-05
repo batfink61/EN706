@@ -47,6 +47,8 @@ namespace SDW_Wellbeing.en706 {
         
         private System.Threading.SendOrPostCallback WriteWeightOperationCompleted;
         
+        private System.Threading.SendOrPostCallback WriteExerciseTypeOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -113,6 +115,9 @@ namespace SDW_Wellbeing.en706 {
         public event WriteWeightCompletedEventHandler WriteWeightCompleted;
         
         /// <remarks/>
+        public event WriteExerciseTypeCompletedEventHandler WriteExerciseTypeCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/ReadUser", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public System.Xml.XmlNode ReadUser(string userId) {
             object[] results = this.Invoke("ReadUser", new object[] {
@@ -143,24 +148,34 @@ namespace SDW_Wellbeing.en706 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/WriteUser", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode WriteUser(string userXml) {
+        public System.Xml.XmlNode WriteUser(string id, string name, string password, string email, int isAdministrator, int hcAllowAccess) {
             object[] results = this.Invoke("WriteUser", new object[] {
-                        userXml});
+                        id,
+                        name,
+                        password,
+                        email,
+                        isAdministrator,
+                        hcAllowAccess});
             return ((System.Xml.XmlNode)(results[0]));
         }
         
         /// <remarks/>
-        public void WriteUserAsync(string userXml) {
-            this.WriteUserAsync(userXml, null);
+        public void WriteUserAsync(string id, string name, string password, string email, int isAdministrator, int hcAllowAccess) {
+            this.WriteUserAsync(id, name, password, email, isAdministrator, hcAllowAccess, null);
         }
         
         /// <remarks/>
-        public void WriteUserAsync(string userXml, object userState) {
+        public void WriteUserAsync(string id, string name, string password, string email, int isAdministrator, int hcAllowAccess, object userState) {
             if ((this.WriteUserOperationCompleted == null)) {
                 this.WriteUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWriteUserOperationCompleted);
             }
             this.InvokeAsync("WriteUser", new object[] {
-                        userXml}, this.WriteUserOperationCompleted, userState);
+                        id,
+                        name,
+                        password,
+                        email,
+                        isAdministrator,
+                        hcAllowAccess}, this.WriteUserOperationCompleted, userState);
         }
         
         private void OnWriteUserOperationCompleted(object arg) {
@@ -329,24 +344,32 @@ namespace SDW_Wellbeing.en706 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/WriteExercise", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode WriteExercise(string userXml) {
+        public System.Xml.XmlNode WriteExercise(string id, string exerciseDate, string userId, string exerciseType, int duration) {
             object[] results = this.Invoke("WriteExercise", new object[] {
-                        userXml});
+                        id,
+                        exerciseDate,
+                        userId,
+                        exerciseType,
+                        duration});
             return ((System.Xml.XmlNode)(results[0]));
         }
         
         /// <remarks/>
-        public void WriteExerciseAsync(string userXml) {
-            this.WriteExerciseAsync(userXml, null);
+        public void WriteExerciseAsync(string id, string exerciseDate, string userId, string exerciseType, int duration) {
+            this.WriteExerciseAsync(id, exerciseDate, userId, exerciseType, duration, null);
         }
         
         /// <remarks/>
-        public void WriteExerciseAsync(string userXml, object userState) {
+        public void WriteExerciseAsync(string id, string exerciseDate, string userId, string exerciseType, int duration, object userState) {
             if ((this.WriteExerciseOperationCompleted == null)) {
                 this.WriteExerciseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWriteExerciseOperationCompleted);
             }
             this.InvokeAsync("WriteExercise", new object[] {
-                        userXml}, this.WriteExerciseOperationCompleted, userState);
+                        id,
+                        exerciseDate,
+                        userId,
+                        exerciseType,
+                        duration}, this.WriteExerciseOperationCompleted, userState);
         }
         
         private void OnWriteExerciseOperationCompleted(object arg) {
@@ -358,30 +381,67 @@ namespace SDW_Wellbeing.en706 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/WriteWeight", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode WriteWeight(string userXml) {
+        public System.Xml.XmlNode WriteWeight(string id, string weightDate, string userId, int weight) {
             object[] results = this.Invoke("WriteWeight", new object[] {
-                        userXml});
+                        id,
+                        weightDate,
+                        userId,
+                        weight});
             return ((System.Xml.XmlNode)(results[0]));
         }
         
         /// <remarks/>
-        public void WriteWeightAsync(string userXml) {
-            this.WriteWeightAsync(userXml, null);
+        public void WriteWeightAsync(string id, string weightDate, string userId, int weight) {
+            this.WriteWeightAsync(id, weightDate, userId, weight, null);
         }
         
         /// <remarks/>
-        public void WriteWeightAsync(string userXml, object userState) {
+        public void WriteWeightAsync(string id, string weightDate, string userId, int weight, object userState) {
             if ((this.WriteWeightOperationCompleted == null)) {
                 this.WriteWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWriteWeightOperationCompleted);
             }
             this.InvokeAsync("WriteWeight", new object[] {
-                        userXml}, this.WriteWeightOperationCompleted, userState);
+                        id,
+                        weightDate,
+                        userId,
+                        weight}, this.WriteWeightOperationCompleted, userState);
         }
         
         private void OnWriteWeightOperationCompleted(object arg) {
             if ((this.WriteWeightCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.WriteWeightCompleted(this, new WriteWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/WriteExerciseType", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Xml.XmlNode WriteExerciseType(string id, string description) {
+            object[] results = this.Invoke("WriteExerciseType", new object[] {
+                        id,
+                        description});
+            return ((System.Xml.XmlNode)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void WriteExerciseTypeAsync(string id, string description) {
+            this.WriteExerciseTypeAsync(id, description, null);
+        }
+        
+        /// <remarks/>
+        public void WriteExerciseTypeAsync(string id, string description, object userState) {
+            if ((this.WriteExerciseTypeOperationCompleted == null)) {
+                this.WriteExerciseTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWriteExerciseTypeOperationCompleted);
+            }
+            this.InvokeAsync("WriteExerciseType", new object[] {
+                        id,
+                        description}, this.WriteExerciseTypeOperationCompleted, userState);
+        }
+        
+        private void OnWriteExerciseTypeOperationCompleted(object arg) {
+            if ((this.WriteExerciseTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.WriteExerciseTypeCompleted(this, new WriteExerciseTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -625,6 +685,32 @@ namespace SDW_Wellbeing.en706 {
         private object[] results;
         
         internal WriteWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Xml.XmlNode Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Xml.XmlNode)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void WriteExerciseTypeCompletedEventHandler(object sender, WriteExerciseTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class WriteExerciseTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal WriteExerciseTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

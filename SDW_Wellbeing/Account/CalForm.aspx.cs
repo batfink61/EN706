@@ -20,7 +20,7 @@ namespace SDW_Wellbeing
         {
             // We need to load the event calendar for the current user so that we can display activity by day
 
-            _userCalendar = new EventCalendar("1");
+            _userCalendar = new EventCalendar(Request.Cookies["profile"]["name"]);
             RefreshSummary();
         }
 

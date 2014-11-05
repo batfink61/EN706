@@ -25,7 +25,12 @@
       <s:element name="WriteUser">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="userXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAdministrator" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hcAllowAccess" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -148,7 +153,11 @@
       <s:element name="WriteExercise">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="userXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exerciseDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exerciseType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="duration" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -168,7 +177,10 @@
       <s:element name="WriteWeight">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="userXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weightDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -176,6 +188,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="WriteWeightResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteExerciseType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteExerciseTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteExerciseTypeResult">
               <s:complexType mixed="true">
                 <s:sequence>
                   <s:any />
@@ -241,6 +274,12 @@
   <wsdl:message name="WriteWeightSoapOut">
     <wsdl:part name="parameters" element="tns:WriteWeightResponse" />
   </wsdl:message>
+  <wsdl:message name="WriteExerciseTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteExerciseType" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteExerciseTypeResponse" />
+  </wsdl:message>
   <wsdl:message name="ReadUserHttpGetIn">
     <wsdl:part name="userId" type="s:string" />
   </wsdl:message>
@@ -248,7 +287,12 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="WriteUserHttpGetIn">
-    <wsdl:part name="userXml" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="isAdministrator" type="s:string" />
+    <wsdl:part name="hcAllowAccess" type="s:string" />
   </wsdl:message>
   <wsdl:message name="WriteUserHttpGetOut">
     <wsdl:part name="Body" />
@@ -289,15 +333,29 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="WriteExerciseHttpGetIn">
-    <wsdl:part name="userXml" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="exerciseDate" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="exerciseType" type="s:string" />
+    <wsdl:part name="duration" type="s:string" />
   </wsdl:message>
   <wsdl:message name="WriteExerciseHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="WriteWeightHttpGetIn">
-    <wsdl:part name="userXml" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="weightDate" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="weight" type="s:string" />
   </wsdl:message>
   <wsdl:message name="WriteWeightHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseTypeHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseTypeHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ReadUserHttpPostIn">
@@ -307,7 +365,12 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="WriteUserHttpPostIn">
-    <wsdl:part name="userXml" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="isAdministrator" type="s:string" />
+    <wsdl:part name="hcAllowAccess" type="s:string" />
   </wsdl:message>
   <wsdl:message name="WriteUserHttpPostOut">
     <wsdl:part name="Body" />
@@ -348,15 +411,29 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="WriteExerciseHttpPostIn">
-    <wsdl:part name="userXml" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="exerciseDate" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="exerciseType" type="s:string" />
+    <wsdl:part name="duration" type="s:string" />
   </wsdl:message>
   <wsdl:message name="WriteExerciseHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="WriteWeightHttpPostIn">
-    <wsdl:part name="userXml" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="weightDate" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="weight" type="s:string" />
   </wsdl:message>
   <wsdl:message name="WriteWeightHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseTypeHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteExerciseTypeHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:portType name="ServiceSoap">
@@ -396,6 +473,10 @@
       <wsdl:input message="tns:WriteWeightSoapIn" />
       <wsdl:output message="tns:WriteWeightSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <wsdl:input message="tns:WriteExerciseTypeSoapIn" />
+      <wsdl:output message="tns:WriteExerciseTypeSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpGet">
     <wsdl:operation name="ReadUser">
@@ -434,6 +515,10 @@
       <wsdl:input message="tns:WriteWeightHttpGetIn" />
       <wsdl:output message="tns:WriteWeightHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <wsdl:input message="tns:WriteExerciseTypeHttpGetIn" />
+      <wsdl:output message="tns:WriteExerciseTypeHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpPost">
     <wsdl:operation name="ReadUser">
@@ -471,6 +556,10 @@
     <wsdl:operation name="WriteWeight">
       <wsdl:input message="tns:WriteWeightHttpPostIn" />
       <wsdl:output message="tns:WriteWeightHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <wsdl:input message="tns:WriteExerciseTypeHttpPostIn" />
+      <wsdl:output message="tns:WriteExerciseTypeHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -549,6 +638,15 @@
     </wsdl:operation>
     <wsdl:operation name="WriteWeight">
       <soap:operation soapAction="http://en706.remotestuff.co.uk/WriteWeight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <soap:operation soapAction="http://en706.remotestuff.co.uk/WriteExerciseType" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -640,6 +738,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <soap12:operation soapAction="http://en706.remotestuff.co.uk/WriteExerciseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
     <http:binding verb="GET" />
@@ -724,6 +831,15 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <http:operation location="/WriteExerciseType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
     <http:binding verb="POST" />
@@ -801,6 +917,15 @@
     </wsdl:operation>
     <wsdl:operation name="WriteWeight">
       <http:operation location="/WriteWeight" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExerciseType">
+      <http:operation location="/WriteExerciseType" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

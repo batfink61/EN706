@@ -7,3 +7,8 @@ U:\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
 U:\SDW_Wellbeing\SDW_Wellbeing\bin\SDW_Wellbeing.dll
 U:\SDW_Wellbeing\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
 U:\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
+U:\GitHub\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
+U:\GitHub\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
+U:\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
+U:\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
+U:\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb

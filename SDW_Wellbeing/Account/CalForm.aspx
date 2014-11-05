@@ -6,7 +6,7 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
 
     <h1>Welcome</h1>
     
@@ -28,12 +28,14 @@
         <a href="WeightManagement.aspx">View Weight</a>
         
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
    
     <p>&nbsp;</p><p>Summary</p><p>
     <asp:Literal ID="CalSummary" runat="server"></asp:Literal>
     </p>
-    
+    </div>
+    <div class="col-md-4">
+
     </td><td valign="top">
     
     <h2>Advice</h2>

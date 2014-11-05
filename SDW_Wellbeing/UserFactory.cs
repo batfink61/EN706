@@ -41,9 +41,8 @@ namespace SDW_Wellbeing
 
         public static bool CreateUser(String userName, String email, String password)
         {
-            String UserRec = String.Format("<xml><userlist><user><id></id><name>{0}</name><password>{1}</password><email>{2}</email><isadministrator>1</isadministrator><hcallowedaccess>0</hcallowedaccess></user></userlist></xml>", userName,email,password);
             en706.Service svc = new en706.Service();
-            XmlNode newuser = svc.WriteUser(UserRec);
+            XmlNode newuser = svc.WriteUser("",userName,password,email,0,0);
             return (newuser.InnerText == "1");
         }
     }
