@@ -97,6 +97,19 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.signin
+{
+    max-width: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+ }
+
+.signin .btn, .form-control 
+{
+   margin: 10px 0px 10px 0px;   
+}
+
+
 
 .navbar{
     margin: 0;
