@@ -29,7 +29,7 @@ namespace SDW_Wellbeing.Account
                 cookie["name"] = UserID.Text;
                 Response.Cookies.Add(cookie);
 
-                FormsAuthentication.RedirectFromLoginPage(UserID.Text, true);
+                FormsAuthentication.RedirectFromLoginPage(UserID.Text, false);
             }
         }
 

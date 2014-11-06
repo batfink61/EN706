@@ -344,30 +344,30 @@ namespace SDW_Wellbeing.en706 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/WriteExercise", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode WriteExercise(string id, string exerciseDate, string userId, string exerciseType, int duration) {
+        public System.Xml.XmlNode WriteExercise(string id, string exerciseDate, string email, string exerciseType, int duration) {
             object[] results = this.Invoke("WriteExercise", new object[] {
                         id,
                         exerciseDate,
-                        userId,
+                        email,
                         exerciseType,
                         duration});
             return ((System.Xml.XmlNode)(results[0]));
         }
         
         /// <remarks/>
-        public void WriteExerciseAsync(string id, string exerciseDate, string userId, string exerciseType, int duration) {
-            this.WriteExerciseAsync(id, exerciseDate, userId, exerciseType, duration, null);
+        public void WriteExerciseAsync(string id, string exerciseDate, string email, string exerciseType, int duration) {
+            this.WriteExerciseAsync(id, exerciseDate, email, exerciseType, duration, null);
         }
         
         /// <remarks/>
-        public void WriteExerciseAsync(string id, string exerciseDate, string userId, string exerciseType, int duration, object userState) {
+        public void WriteExerciseAsync(string id, string exerciseDate, string email, string exerciseType, int duration, object userState) {
             if ((this.WriteExerciseOperationCompleted == null)) {
                 this.WriteExerciseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWriteExerciseOperationCompleted);
             }
             this.InvokeAsync("WriteExercise", new object[] {
                         id,
                         exerciseDate,
-                        userId,
+                        email,
                         exerciseType,
                         duration}, this.WriteExerciseOperationCompleted, userState);
         }
@@ -381,29 +381,29 @@ namespace SDW_Wellbeing.en706 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://en706.remotestuff.co.uk/WriteWeight", RequestNamespace="http://en706.remotestuff.co.uk/", ResponseNamespace="http://en706.remotestuff.co.uk/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode WriteWeight(string id, string weightDate, string userId, int weight) {
+        public System.Xml.XmlNode WriteWeight(string id, string weightDate, string email, int weight) {
             object[] results = this.Invoke("WriteWeight", new object[] {
                         id,
                         weightDate,
-                        userId,
+                        email,
                         weight});
             return ((System.Xml.XmlNode)(results[0]));
         }
         
         /// <remarks/>
-        public void WriteWeightAsync(string id, string weightDate, string userId, int weight) {
-            this.WriteWeightAsync(id, weightDate, userId, weight, null);
+        public void WriteWeightAsync(string id, string weightDate, string email, int weight) {
+            this.WriteWeightAsync(id, weightDate, email, weight, null);
         }
         
         /// <remarks/>
-        public void WriteWeightAsync(string id, string weightDate, string userId, int weight, object userState) {
+        public void WriteWeightAsync(string id, string weightDate, string email, int weight, object userState) {
             if ((this.WriteWeightOperationCompleted == null)) {
                 this.WriteWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWriteWeightOperationCompleted);
             }
             this.InvokeAsync("WriteWeight", new object[] {
                         id,
                         weightDate,
-                        userId,
+                        email,
                         weight}, this.WriteWeightOperationCompleted, userState);
         }
         

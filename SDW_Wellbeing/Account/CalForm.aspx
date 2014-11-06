@@ -25,7 +25,8 @@
         <TodayDayStyle BackColor="#CCCCCC" />
         </asp:Calendar>
         
-        <a href="WeightManagement.aspx">View Weight</a>
+        <a href="WeightManagement.aspx">View Weight</a><br />
+        <a href="record_weight.aspx">Record Weight</a>
         
     </div>
     <div class="col-md-4">

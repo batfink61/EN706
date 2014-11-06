@@ -55,6 +55,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\CalForm.aspx" />
+    <Content Include="Account\record_weight.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\record_weight.aspx.cs">
+      <DependentUpon>record_weight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\record_weight.aspx.designer.cs">
+      <DependentUpon>record_weight.aspx</DependentUpon>
     </Compile>
     <Compile Include="Calendar.cs" />
     <Compile Include="Account\CalForm.aspx.cs">

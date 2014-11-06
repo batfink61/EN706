@@ -39,5 +39,19 @@ namespace SDW_Wellbeing
                 return new Weight(xdoc);
             }
         }
+        public bool SaveWeight(String userId, String weightDate, int weight)
+        {
+            en706.Service svc = new en706.Service();
+            XmlNode xdoc = svc.WriteWeight("", weightDate, userId, weight);
+            if (xdoc.InnerText=="1")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }
