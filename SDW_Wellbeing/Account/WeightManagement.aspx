@@ -65,7 +65,7 @@
 			<div>
 				<label for="email">From Date: </label>
                 &nbsp;<asp:TextBox ID="fromDate" runat="server" ></asp:TextBox>
-                <img src="calendar_information.png" onclick="displayCalendar()" />
+                <img alt="click me" src="~/images/calendar_information.png" onclick="displayCalendar()" />
 			</div>
             <div id="datePicker">
                 <asp:Calendar id="calEventDate" 
@@ -77,7 +77,7 @@
 			<div>
 				<label for="message">To Date: </label>
 				&nbsp;<asp:TextBox ID="toDate" runat="server"></asp:TextBox>
-                <img src="calendar_information2.png" onclick="displayCalendar2()" />
+                <img alt="click me" src="~/images/calendar_information2.png" onclick="displayCalendar2()" />
 			</div>
             <div id="datePicker2">
                 <asp:Calendar id="calEventDate2" 

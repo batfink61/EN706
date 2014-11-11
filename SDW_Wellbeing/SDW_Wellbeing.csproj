@@ -56,9 +56,12 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\CalForm.aspx" />
     <Content Include="Account\record_weight.aspx" />
+    <Content Include="calendar_information.png" />
+    <Content Include="calendar_information2.png" />
+    <Content Include="index.htm" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\highcharts.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.min.js" />
     <Content Include="Scripts\plugins.js" />
@@ -68,13 +71,13 @@
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\main.css" />
     <Content Include="Styles\normalize.css" />
-    <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Account\WeightManagement.aspx" />
+    <Content Include="WeightGraph.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,11 +89,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\en706\service.disco" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
+    <Content Include="App_Data\Web.config" />
+    <Content Include="App_Data\Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Web.Release.config">
+    <Content Include="App_Data\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
@@ -177,11 +180,16 @@
     <Compile Include="Account\WeightManagement.aspx.designer.cs">
       <DependentUpon>WeightManagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WeightGraph.aspx.cs">
+      <DependentUpon>WeightGraph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeightGraph.aspx.designer.cs">
+      <DependentUpon>WeightGraph.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WeightModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
