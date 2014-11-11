@@ -56,8 +56,8 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\CalForm.aspx" />
     <Content Include="Account\record_weight.aspx" />
-    <Content Include="calendar_information.png" />
-    <Content Include="calendar_information2.png" />
+    <Content Include="images\calendar_information.png" />
+    <Content Include="images\calendar_information2.png" />
     <Content Include="index.htm" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -77,6 +77,11 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Account\WeightManagement.aspx" />
+    <None Include="Web References\en706\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\en706\service.disco" />
     <Content Include="WeightGraph.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,11 +89,6 @@
     </None>
     <None Include="Styles\bootstrap-theme.css.map" />
     <None Include="Styles\bootstrap.css.map" />
-    <None Include="Web References\en706\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\en706\service.disco" />
     <Content Include="App_Data\Web.config" />
     <Content Include="App_Data\Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -96,6 +96,10 @@
     <Content Include="App_Data\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web References\en706\service.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -189,14 +193,6 @@
     </Compile>
     <Compile Include="WeightModel.cs" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Account\Web.config" />
-    <Content Include="Site.Master" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
   <ItemGroup>
     <WebReferenceUrl Include="http://en706.remotestuff.co.uk/">
       <UrlBehavior>Dynamic</UrlBehavior>
@@ -211,7 +207,11 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\en706\service.wsdl" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

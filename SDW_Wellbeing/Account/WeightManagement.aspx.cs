@@ -10,6 +10,9 @@ namespace SDW_Wellbeing
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public String weightList="";
+        public String dateList="";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             userID.Text = Request.Cookies["profile"]["name"];
@@ -25,14 +28,9 @@ namespace SDW_Wellbeing
         protected void Button1_Click(object sender, EventArgs e)
         {
             Weight weight = WeightModel.Instance.getWeight(userID.Text, fromDate.Text, toDate.Text);
-            if (weight != null)
-            {
-                message.Text = weight.getList();
-            }
-            else
-            {
-                message.Text = "No Weight Information";
-            }
+            weightList = weight.geValueList();
+            dateList = weight.getDatesList();
+
         }
     }
 }

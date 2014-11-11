@@ -8,30 +8,44 @@ namespace SDW_Wellbeing
 {
     public class Weight
     {
-        private List<String> weights;
+        private String weightsCsv;
+        private String datesCsv;
+
+        private List<String> weights= new List<String>();
+        private List<String> dates = new List<String>();
         public Weight(XmlDocument xdoc)
         {
-            weights = new List<String>();
             XmlNodeList nodes = xdoc.SelectNodes("/weightlist/weight");
             foreach (XmlNode node in nodes) {
-                String str = "";
-                foreach (XmlNode node2 in node.ChildNodes)
-                {
-                    if ((node2.Name == "id") || (node2.Name == "userid"))
-                        continue;
-                    str += node2.InnerText + "  ";
-                }
-                weights.Add(str);
+                weights.Add(node.SelectSingleNode("weight").InnerText);
+                dates.Add(node.SelectSingleNode("weightdate").InnerText);
             }
+
         }
-        public String getList() 
+
+        public String geValueList()
         {
             String listOfWeights = "";
+            String sepr = "";
+
             foreach (String str in weights)
             {
-                listOfWeights += str + "\n";
+                listOfWeights += sepr + str;
+                sepr = ",";
             }
             return listOfWeights;
+        }
+        public String getDatesList()
+        {
+            String listOfDates = "";
+            String sepr = "";
+
+            foreach (String str in dates)
+            {
+                listOfDates += string.Format("{0}'{1}'", sepr, str);
+                sepr = ",";
+            }
+            return listOfDates;
         }
        
     }

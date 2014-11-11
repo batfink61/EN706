@@ -19,9 +19,14 @@ namespace SDW_Wellbeing
         protected void Page_Load(object sender, EventArgs e)
         {
             // We need to load the event calendar for the current user so that we can display activity by day
-
-            _userCalendar = new EventCalendar(Request.Cookies["profile"]["name"]);
-            RefreshSummary();
+            try
+            {
+                _userCalendar = new EventCalendar(Request.Cookies["profile"]["name"]);
+                RefreshSummary();
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         protected void Calendar_SelectionChanged(object sender, EventArgs e)
@@ -48,10 +53,15 @@ namespace SDW_Wellbeing
         {
             // Check to see if the rendered day has any activity. If so then change background of calendar cell
             // so that user has visual cue that activity exists
-
-            if (_userCalendar.GetDay(e.Day.Date).Count > 0)
+            try
             {
-                e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#e2e8ee");
+                if (_userCalendar.GetDay(e.Day.Date).Count > 0)
+                {
+                    e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#e2e8ee");
+                }
+            }
+            catch (Exception ex)
+            {
             }
         }
 

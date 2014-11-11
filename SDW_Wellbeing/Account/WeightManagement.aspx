@@ -11,6 +11,54 @@
         datePicker2.style.display = 'block';
     }
     </script>
+    <script type="text/javascript">
+$(function () {
+        $('#Div1').highcharts({
+            chart: {
+                type: 'line',
+                width: 1000
+            },
+            title: {
+                text: 'weight',
+                x: -20 //center
+            },
+            xAxis: {
+                title: {
+                    enabled: true,
+                    text: 'Date',
+                },
+                maxPadding: 0.05,
+                showLastLabel: true, 
+
+            categories: [<%=dateList %>]},
+            yAxis: {
+                title: {
+                    text: 'weight'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Weight',
+                data: [<%=weightList %>]            }]
+        });
+    });
+
+</script>
     <style type="text/css">
         #datePicker
         {
@@ -65,7 +113,7 @@
 			<div>
 				<label for="email">From Date: </label>
                 &nbsp;<asp:TextBox ID="fromDate" runat="server" ></asp:TextBox>
-                <img alt="click me" src="~/images/calendar_information.png" onclick="displayCalendar()" />
+                <img alt="click me" src="../images/calendar_information.png" onclick="displayCalendar()" />
 			</div>
             <div id="datePicker">
                 <asp:Calendar id="calEventDate" 
@@ -77,7 +125,7 @@
 			<div>
 				<label for="message">To Date: </label>
 				&nbsp;<asp:TextBox ID="toDate" runat="server"></asp:TextBox>
-                <img alt="click me" src="~/images/calendar_information2.png" onclick="displayCalendar2()" />
+                <img alt="click me" src="../images/calendar_information2.png" onclick="displayCalendar2()" />
 			</div>
             <div id="datePicker2">
                 <asp:Calendar id="calEventDate2" 
@@ -93,6 +141,7 @@
                         Width="362px"></asp:TextBox>
                 </div>
             
+            <div id="Div1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 		</fieldset>
 </asp:Content>
