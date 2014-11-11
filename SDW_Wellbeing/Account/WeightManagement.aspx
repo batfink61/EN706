@@ -105,6 +105,7 @@ $(function () {
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<!--Testing-->
  <fieldset>
 			<legend>Read Weight</legend>
 			<div>

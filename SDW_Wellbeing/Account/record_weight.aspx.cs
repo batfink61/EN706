@@ -17,18 +17,19 @@ namespace SDW_Wellbeing.Account
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            bool ok = WeightModel.Instance.SaveWeight(Request.Cookies["profile"]["name"],txtDate.Text,Int32.Parse(txtWeight.Text));
-            if (ok)
-            {
-                lblErrorMessage.Text = "Saved Successfully";
-                txtWeight.Text = "";
-                txtDate.Text = "";
-            }
-            else
-            {
-                lblErrorMessage.Text = "Unable to Save";
+             bool ok = WeightModel.Instance.SaveWeight(Request.Cookies["profile"]["name"], txtDate.Text, Int32.Parse(txtWeight.Text));
+                if (ok)
+                {
+                    lblErrorMessage.Text = "Saved Successfully";
+                    txtWeight.Text = "";
+                    txtDate.Text = "";
+                }
+                else
+                {
+                    lblErrorMessage.Text = "Unable to Save";
 
-            }
+                }
+            
         }
     }
 }
