@@ -6,12 +6,13 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    Date <br />
-    <asp:TextBox ID="txtDate" runat="server"></asp:TextBox><br />
-    Weight <br />
-    <asp:TextBox ID="txtWeight" runat="server"></asp:TextBox><br /><br />
-    <asp:Button ID="btnSave" runat="server" Text="Save" onclick="btnSave_Click" />
-    <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
-    <br />
-
+    <div style="margin-left:100px; margin-top:50px; margin-bottom:100px;">
+        Date <br />
+        <asp:TextBox ID="txtDate" runat="server"></asp:TextBox><br />
+        Weight <br />
+        <asp:TextBox ID="txtWeight" runat="server"></asp:TextBox><br /><br />
+        <asp:Button ID="btnSave" runat="server" Text="Save" onclick="btnSave_Click" />
+        <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
+        <br />
+    </div>
 </asp:Content>

@@ -17,7 +17,27 @@ namespace SDW_Wellbeing.Account
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-             bool ok = WeightModel.Instance.SaveWeight(Request.Cookies["profile"]["name"], txtDate.Text, Int32.Parse(txtWeight.Text));
+            int weight;
+            DateTime tmp;
+            if (txtDate.Text == "")
+                lblErrorMessage.Text = "Please enter a value for date";
+            else if (txtWeight.Text == "")
+                lblErrorMessage.Text = "Please enter value for weight";
+            else if (!int.TryParse(txtWeight.Text, out weight))
+            {
+                lblErrorMessage.Text = "Weight should be numeric";
+            }
+            else if (int.Parse(txtWeight.Text)<1 || int.Parse(txtWeight.Text)>1000)
+            {
+                lblErrorMessage.Text = "Please weight between 1-1000";
+            } 
+            else if (!DateTime.TryParse(txtDate.Text, out tmp ))
+            {
+                lblErrorMessage.Text = "Please enter a valid date";
+            }
+            else 
+            {
+                bool ok = WeightModel.Instance.SaveWeight(Request.Cookies["profile"]["name"], txtDate.Text, Int32.Parse(txtWeight.Text));
                 if (ok)
                 {
                     lblErrorMessage.Text = "Saved Successfully";
@@ -29,7 +49,7 @@ namespace SDW_Wellbeing.Account
                     lblErrorMessage.Text = "Unable to Save";
 
                 }
-            
+            }
         }
     }
 }
