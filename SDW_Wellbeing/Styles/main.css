@@ -114,8 +114,23 @@ textarea {
     color: White;
 }
 
-.navbar{
+.nav > li > .logout-btn 
+{
+    display: inline;
+}
+
+.username
+{
+    color: #8DC63F;
+}
+
+.navbar {
     margin: 0;
+}
+
+label > .error
+{
+    color:Red;
 }
 
 @media (max-width: 767px){

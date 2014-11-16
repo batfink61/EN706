@@ -13,13 +13,31 @@ namespace SDW_Wellbeing {
     public partial class ExerciseAdmin {
         
         /// <summary>
-        /// Label1 control.
+        /// exercises control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl exercises;
+        
+        /// <summary>
+        /// validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl validate;
+        
+        /// <summary>
+        /// addExercise control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label addExercise;
         
         /// <summary>
         /// ExerciseName control.

@@ -15,13 +15,11 @@
 
                     <div class="form-group">
                     
-                            <legend>Register:</legend>
+                            <legend>Register</legend>
                        
                                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="control-label">User Name:</asp:Label>
-                                <asp:TextBox ID="UserName" runat="server" CssClass="textEntry form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
-                                     ErrorMessage="User Name is required." ToolTip="User Name is required." 
-                                     ValidationGroup="RegisterUserValidationGroup"></asp:RequiredFieldValidator>
+                                <asp:TextBox ID="UserName" runat="server" CssClass="required form-control" ></asp:TextBox>
+                                
                                 <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">E-mail:</asp:Label>
                                 <asp:TextBox ID="Email" runat="server" CssClass="textEntry form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" 

@@ -12,18 +12,37 @@
     <title></title>
     <link href="~/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="~/Styles/main.css" rel="stylesheet" type="text/css" />
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-     <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-       
-    <script type="text/javascript" src="Scripts/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validation.net.webforms.min.js"></script>
+    <script type="text/javascript" src="../Scripts/modernizr-2.6.2.min.js"></script>
+    <script>
+        $(function () {
+            $("#aspForm").validateWebForm({
+
+                errorElement: "div",
+                wrapper: "div",  // a wrapper around the error message
+                errorPlacement: function (error, element) {
+                    offset = element.offset();
+                    error.insertBefore(element)
+                    error.addClass('message');  // add a class to the wrapper
+                    error.css('position', 'absolute');
+                    error.css('left', offset.left + element.outerWidth());
+                    error.css('top', offset.top);
+                }
+
+            });
+        });
+    </script>
     <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 <body>
-<form runat="server">
+<form id="aspForm" runat="server">
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header navbar-main">
     <a class="navbar-brand" href="#"><h1 class="logo">Logo</h1></a>
@@ -40,18 +59,19 @@
           <li class="dropdown" id="menuLogin">
   <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        <a href="Account/CalForm.aspx">Log In</a>
+                        <a href="Account/CalForm.aspx" class="btn form-btn">Log In</a>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                        Welcome back <asp:LoginName ID="HeadLoginName" runat="server"  CssClass="username" />
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" CssClass="btn form-btn logout-btn" LogoutText="Log Out" LogoutPageUrl="~/"/>
                     </LoggedInTemplate>
                 </asp:LoginView>
           </li> 
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-
+<asp:LoginView ID="LoginView1" runat="server" EnableViewState="false">
+<LoggedInTemplate>
 <nav class="navbar navbar-inverse navbar_sencondary" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -61,7 +81,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#"><i class="fa fa-home fa-fw"></i>Wellbeing System</a>
+    <a class="navbar-brand" href="CalForm.aspx"><i class="fa fa-home fa-fw"></i>Home</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,7 +90,7 @@
         <li class="dropdown"> 
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift fa-fw"></i>Log</a>
          <ul class="dropdown-menu">
-          <li><a href="#"> Exercise </a></li>
+          <li><a href="WeightManagement.aspx"> Exercise </a></li>
           <li><a href="#"> Weight</a></li>   
          </ul>
         </li>
@@ -84,6 +104,8 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
+</LoggedInTemplate>
+</asp:LoginView>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
         </div>
@@ -95,7 +117,7 @@
         <li>Put any other links in here</li>
         <li>Insert Name of project</li>
         <li>Inset Name of Team</li>
-        <li>Copright 2014</li>
+        <li>Copyright 2014</li>
 
         </ul>
     </div>
@@ -103,10 +125,7 @@
     <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>            window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="~/Scripts/.js"></script>-->
-        <script src="Scripts/plugins.js"></script>
-        <script src="Scripts/main.js"></script>
-        <script src="Scripts/bootstrap.js"></script>
-
-
+        <script type="text/javascript" src="../Scripts/bootstrap.js"></script>
+        <script type="text/javascript" src="../Scripts/plugins.js"></script>
 </body>
 </html>

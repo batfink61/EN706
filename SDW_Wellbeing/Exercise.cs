@@ -10,7 +10,8 @@ namespace SDW_Wellbeing
     {
       public Exercise(XmlNode xdoc)
         {
-            //name = xdoc.SelectSingleNode("/userlist/user/name").InnerText;
+            id = xdoc.FirstChild.InnerText;
+            name = xdoc.LastChild.InnerText;
         }
         private string _name;
         public string name
@@ -23,6 +24,20 @@ namespace SDW_Wellbeing
             { 
                 return _name;
             }
+        }
+
+        private string _id;
+        public string id
+        {
+            set
+            {
+                _id = value;
+            }
+            get
+            {
+                return _id;
+            }
+
         }
     }
 }
