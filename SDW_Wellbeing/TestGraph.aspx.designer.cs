@@ -10,6 +10,6 @@
 namespace SDW_Wellbeing {
     
     
-    public partial class WeightGraph {
+    public partial class TestGraph {
     }
 }

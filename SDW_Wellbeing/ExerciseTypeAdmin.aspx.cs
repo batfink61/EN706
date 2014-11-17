@@ -20,10 +20,10 @@ namespace SDW_Wellbeing
             exercises.InnerHtml = "What";
             content = "<h3>Current Exercises</h3><table class=\"table table-striped\"><thead><tr><th>ID</th><th>Name</th></tr></thead><tbody>";
             //Retrieve array of exercises from the database
-            Exercise[] exerciseArray = ExerciseFactory.getExerciseTypes();
+            ExerciseType[] exerciseArray = ExerciseTypeFactory.getExerciseTypes();
   
             //For each exercise in the array print it to the exercises DIV on the page.
-            foreach (Exercise exercise in exerciseArray)
+            foreach (ExerciseType exercise in exerciseArray)
             {
                 if (exercise.name == newExercise)
                 {
@@ -52,9 +52,9 @@ namespace SDW_Wellbeing
             else
             {
                 //get exercise list and check if this already exists
-                Exercise[] exerciseArray = ExerciseFactory.getExerciseTypes();
+                ExerciseType[] exerciseArray = ExerciseTypeFactory.getExerciseTypes();
 
-                foreach (Exercise exercise in exerciseArray)
+                foreach (ExerciseType exercise in exerciseArray)
                 {
                     if (ExerciseName.Text == exercise.name)
                     {
@@ -71,7 +71,7 @@ namespace SDW_Wellbeing
             }
             else
             {
-                if (ExerciseFactory.createExercise(ExerciseName.Text))
+                if (ExerciseTypeFactory.createExercise(ExerciseName.Text))
                 {
                     this.newExercise = ExerciseName.Text;
                     Response.Redirect(Request.RawUrl);

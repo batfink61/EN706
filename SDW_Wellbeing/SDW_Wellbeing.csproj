@@ -53,9 +53,11 @@
     <Content Include="About.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\ExerciseLogGraph.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\CalForm.aspx" />
     <Content Include="Account\record_weight.aspx" />
+    <Content Include="ExerciseTypeAdmin.aspx" />
     <Content Include="images\calendar_information.png" />
     <Content Include="images\calendar_information2.png" />
     <Content Include="index.htm" />
@@ -76,13 +78,12 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Account\WeightManagement.aspx" />
+    <Content Include="Account\WeightLogGraph.aspx" />
     <None Include="Web References\en706\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\en706\service.disco" />
-    <Content Include="WeightGraph.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +97,7 @@
     <Content Include="App_Data\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="TestGraph.aspx" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -122,6 +124,13 @@
     </Compile>
     <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ExerciseLogGraph.aspx.cs">
+      <DependentUpon>ExerciseLogGraph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ExerciseLogGraph.aspx.designer.cs">
+      <DependentUpon>ExerciseLogGraph.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -153,6 +162,16 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Exercise.cs" />
+    <Compile Include="ExerciseModel.cs" />
+    <Compile Include="ExerciseType.cs" />
+    <Compile Include="ExerciseTypeAdmin.aspx.cs">
+      <DependentUpon>ExerciseTypeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExerciseTypeAdmin.aspx.designer.cs">
+      <DependentUpon>ExerciseTypeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExerciseTypeFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,27 +188,28 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="TestGraph.aspx.cs">
+      <DependentUpon>TestGraph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestGraph.aspx.designer.cs">
+      <DependentUpon>TestGraph.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserFactory.cs" />
+    <Compile Include="Validation.cs" />
     <Compile Include="Web References\en706\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Weight.cs" />
-    <Compile Include="Account\WeightManagement.aspx.cs">
-      <DependentUpon>WeightManagement.aspx</DependentUpon>
+    <Compile Include="Account\WeightLogGraph.aspx.cs">
+      <DependentUpon>WeightLogGraph.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\WeightManagement.aspx.designer.cs">
-      <DependentUpon>WeightManagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WeightGraph.aspx.cs">
-      <DependentUpon>WeightGraph.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WeightGraph.aspx.designer.cs">
-      <DependentUpon>WeightGraph.aspx</DependentUpon>
+    <Compile Include="Account\WeightLogGraph.aspx.designer.cs">
+      <DependentUpon>WeightLogGraph.aspx</DependentUpon>
     </Compile>
     <Compile Include="WeightModel.cs" />
   </ItemGroup>

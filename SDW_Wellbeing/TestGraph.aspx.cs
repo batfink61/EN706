@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SDW_Wellbeing
 {
-    public partial class WeightGraph : System.Web.UI.Page
+    public partial class TestGraph : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

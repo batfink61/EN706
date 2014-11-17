@@ -87,20 +87,22 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
     <ul class="nav navbar-nav">
-        <li class="dropdown"> 
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift fa-fw"></i>Log</a>
+       <li class="dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift fa-fw"></i>Log/Graph</a>
          <ul class="dropdown-menu">
-          <li><a href="WeightManagement.aspx"> Exercise </a></li>
-          <li><a href="#"> Weight</a></li>   
+          <li><a href="ExerciseLogGraph.aspx"> Exercise </a></li>
+          <li><a href="WeightLogGraph.aspx"> Weight</a></li>   
          </ul>
         </li>
+
         <li class="dropdown"> 
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift fa-fw"></i>Graph</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift fa-fw"></i>Record</a>
          <ul class="dropdown-menu">
           <li><a href="#"> Exercise </a></li>
-          <li><a href="#"> Weight</a></li>   
+          <li><a href="record_weight.aspx"> Weight</a></li>   
          </ul>
         </li>
+     
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

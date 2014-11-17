@@ -2,41 +2,58 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Xml;
 
 namespace SDW_Wellbeing
 {
     public class Exercise
     {
-      public Exercise(XmlNode xdoc)
-        {
-            id = xdoc.FirstChild.InnerText;
-            name = xdoc.LastChild.InnerText;
-        }
-        private string _name;
-        public string name
+        private string _date;
+        public string date
         {
             set
-            { 
-                _name = value;
+            {
+                _date = value;
             }
             get
-            { 
-                return _name;
+            {
+                return _date;
             }
-        }
 
-        private string _id;
-        public string id
+        }
+        private string _type;
+        public string type
         {
             set
             {
-                _id = value;
+                _type = value;
             }
             get
             {
-                return _id;
+                return _type;
             }
+
+        }
+        private string _duration;
+        public string duration
+        {
+            set
+            {
+                _duration = value;
+            }
+            get
+            {
+                return _duration;
+            }
+
+        }
+        public override string ToString()
+        {
+            return base.ToString() + " " + this._date + " " + this._type + " " + this._duration;
 
         }
     }
