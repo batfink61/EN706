@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b63fe557-ad09-4efc-bf9c-dc44dc0f041d" name="j163159@PBOARC11717182 2014-11-23 14:59:23" runUser="UNN\j163159" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8526480c-3462-49ce-ae69-e5d8f1b93606">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="j163159_PBOARC11717182 2014-11-23 14_59_23">
+      <DeploymentItem filename="U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-11-23T14:59:23.8067356+00:00" queuing="2014-11-23T14:59:23.8697419+00:00" start="2014-11-23T14:59:23.8787428+00:00" finish="2014-11-23T14:59:24.1337683+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="addExerciseTypeString" storage="u:\my documents\system development workshop\group project\code\en706\en706\sdw_wellbeing_test\bin\debug\sdw_wellbeing_test.dll" id="4379bc47-2cb5-2d8a-9846-f861526a477d">
+      <Execution id="d2863589-30eb-461f-a9d5-a3c886575dcb" />
+      <TestMethod codeBase="U:/My Documents/System Development Workshop/Group Project/Code/EN706/EN706/SDW_Wellbeing_Test/bin/Debug/SDW_Wellbeing_Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SDW_Wellbeing_Test.ExerciseTypeAdminTest, SDW_Wellbeing_Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="addExerciseTypeString" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4379bc47-2cb5-2d8a-9846-f861526a477d" executionId="d2863589-30eb-461f-a9d5-a3c886575dcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="d2863589-30eb-461f-a9d5-a3c886575dcb" testId="4379bc47-2cb5-2d8a-9846-f861526a477d" testName="addExerciseTypeString" computerName="PBOARC11717182" duration="00:00:00.0120075" startTime="2014-11-23T14:59:23.8927442+00:00" endTime="2014-11-23T14:59:24.0987648+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2863589-30eb-461f-a9d5-a3c886575dcb">
+    </UnitTestResult>
+  </Results>
+</TestRun>

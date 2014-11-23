@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDW_Wellbeing", "SDW_Wellbeing\SDW_Wellbeing.csproj", "{A05ACCA3-98A4-49CD-AD70-DE1EBFDE5B9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDW_Wellbeing_Test", "SDW_Wellbeing_Test\SDW_Wellbeing_Test.csproj", "{DEB1B350-76E3-4CD7-9909-91D5DF4D3976}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F430A6D-FCCC-4283-A184-F16293171B86}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SDW_Wellbeing.vsmdi = SDW_Wellbeing.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SDW_Wellbeing.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -13,6 +25,10 @@ Global
 		{A05ACCA3-98A4-49CD-AD70-DE1EBFDE5B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A05ACCA3-98A4-49CD-AD70-DE1EBFDE5B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A05ACCA3-98A4-49CD-AD70-DE1EBFDE5B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB1B350-76E3-4CD7-9909-91D5DF4D3976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB1B350-76E3-4CD7-9909-91D5DF4D3976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB1B350-76E3-4CD7-9909-91D5DF4D3976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB1B350-76E3-4CD7-9909-91D5DF4D3976}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

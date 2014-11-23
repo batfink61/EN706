@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="1678bc12-d699-4261-8e66-d768959d2277" name="j163159@PBOARC11717182 2014-11-23 15:07:29" runUser="UNN\j163159" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8526480c-3462-49ce-ae69-e5d8f1b93606">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="j163159_PBOARC11717182 2014-11-23 15_07_29">
+      <DeploymentItem filename="U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-11-23T15:07:29.0992600+00:00" queuing="2014-11-23T15:07:29.1332634+00:00" start="2014-11-23T15:07:29.1472648+00:00" finish="2014-11-23T15:07:51.3304829+00:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="createExerciseTest" storage="u:\my documents\system development workshop\group project\code\en706\en706\sdw_wellbeing_test\bin\debug\sdw_wellbeing_test.dll" id="66e3aaa9-69a4-ae68-b8ec-a7e78cfac1e0">
+      <Execution id="bb27538c-dcdc-47fe-bf44-7e7cc94caf09" />
+      <TestMethod codeBase="U:/My Documents/System Development Workshop/Group Project/Code/EN706/EN706/SDW_Wellbeing_Test/bin/Debug/SDW_Wellbeing_Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SDW_Wellbeing_Test.ExerciseTypeFactoryTest, SDW_Wellbeing_Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="createExerciseTest" />
+      <AspNet webSiteUrl="http://localhost:55791/ExerciseTypeAdmin.aspx">
+        <Host pathToWebApp="U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="66e3aaa9-69a4-ae68-b8ec-a7e78cfac1e0" executionId="bb27538c-dcdc-47fe-bf44-7e7cc94caf09" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="bb27538c-dcdc-47fe-bf44-7e7cc94caf09" testId="66e3aaa9-69a4-ae68-b8ec-a7e78cfac1e0" testName="createExerciseTest" computerName="PBOARC11717182" duration="00:00:00.1820184" startTime="2014-11-23T15:07:29.2002701+00:00" endTime="2014-11-23T15:07:51.1724671+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb27538c-dcdc-47fe-bf44-7e7cc94caf09">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;False&gt;. Actual:&lt;True&gt;. </Message>
+          <StackTrace>   at SDW_Wellbeing_Test.ExerciseTypeFactoryTest.createExerciseTest() in U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing_Test\ExerciseTypeFactoryTest.cs:line 103
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
