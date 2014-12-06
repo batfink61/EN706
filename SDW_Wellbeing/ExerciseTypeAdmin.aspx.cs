@@ -71,6 +71,8 @@ namespace SDW_Wellbeing
             }
             else
             {
+                //Passes validation and exercise is added passed to the web service to be added.
+                //On addition page is refresh
                 if (ExerciseTypeFactory.createExercise(ExerciseName.Text))
                 {
                     this.newExercise = ExerciseName.Text;

@@ -23,14 +23,6 @@
 
                 errorElement: "div",
                 wrapper: "div",  // a wrapper around the error message
-                errorPlacement: function (error, element) {
-                    offset = element.offset();
-                    error.insertBefore(element)
-                    error.addClass('message');  // add a class to the wrapper
-                    error.css('position', 'absolute');
-                    error.css('left', offset.left + element.outerWidth());
-                    error.css('top', offset.top);
-                }
 
             });
         });

@@ -11,7 +11,7 @@
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox><br />
         Weight <br />
         <asp:TextBox ID="txtWeight" runat="server"></asp:TextBox><br /><br />
-        <asp:Button ID="btnSave" runat="server" Text="Save" onclick="btnSave_Click" />
+        <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn form-btn" onclick="btnSave_Click" />
         <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
         <br />
     </div>

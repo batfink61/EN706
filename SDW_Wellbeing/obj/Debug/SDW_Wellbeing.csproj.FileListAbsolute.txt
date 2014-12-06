@@ -22,3 +22,8 @@ U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_W
 U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
 U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
 U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
+U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
+U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
+U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
+U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
+U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb

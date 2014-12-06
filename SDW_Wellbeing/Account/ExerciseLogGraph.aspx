@@ -148,7 +148,7 @@ $(function () {
              </div>
             
          
-            <div><asp:Button ID="Button1" runat="server" Text="OK" onclick="Button1_Click" /></div>
+            <div><asp:Button ID="Button1" runat="server" Text="OK" CssClass="btn form-btn" onclick="Button1_Click" /></div>
             <br />
             <div>
                 <%=dateExerciseTable %>

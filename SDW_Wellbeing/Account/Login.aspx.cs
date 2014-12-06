@@ -17,7 +17,17 @@ namespace SDW_Wellbeing.Account
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            if (UserFactory.VerifyUser(UserID.Text, Password.Text))
+            if (UserID.Text == "")
+            {
+                validate.Attributes["class"] += " has-error";
+                EmailLabel.Text = "Exercise Name: Please enter a name";
+                
+            }
+            else if (Password.Text == "")
+            {
+            }
+
+            else if (UserFactory.VerifyUser(UserID.Text, Password.Text))
             {
                 //FormsAuthentication.SetAuthCookie(UserID.Text, true);
 

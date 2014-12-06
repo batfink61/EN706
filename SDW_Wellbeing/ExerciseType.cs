@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Exercise type object (Factory which serves weight recording and exercise events as ICalEvents)
+// The Calendar uses the EN706 web service to access data objects (End point defined in web.config)
+//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

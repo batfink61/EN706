@@ -42,7 +42,7 @@
                                 <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" 
                                      CssClass="failureNotification" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match."
                                      ValidationGroup="RegisterUserValidationGroup">*</asp:CompareValidator>
-                            <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-default form-btn" onclick="btnRegister_Click"  />
+                            <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn form-btn" onclick="btnRegister_Click"  />
                             <asp:Label ID="lblMessage" runat="server"></asp:Label>
 
                     </div>

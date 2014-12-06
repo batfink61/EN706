@@ -111,13 +111,20 @@ textarea {
 
 .form-btn {
     background-color: #8DC63F;
-    color: White;
+    color: white;
+}
+
+.nav > li > .form-btn:hover, .form-btn:hover
+{
+    background-color: #8DC63F;
+    color: black;
 }
 
 .nav > li > .logout-btn 
 {
     display: inline;
 }
+
 
 .username
 {
@@ -158,6 +165,13 @@ background-color: #8DC63F;
 border: none;
 color: black;
 }
+
+.navbar-inverse:hover {
+background-color: #8DC63F;
+border: none;
+color: black;
+}
+
 
 .navbar-default {
     background-color: white
