@@ -1,5 +1,5 @@
-﻿// Exercise type object (Factory which serves weight recording and exercise events as ICalEvents)
-// The Calendar uses the EN706 web service to access data objects (End point defined in web.config)
+﻿// Exercise type object
+// Used within the adminsitration of exercises 
 //
 
 using System;
@@ -12,6 +12,7 @@ namespace SDW_Wellbeing
 {
     public class ExerciseType
     {
+      //constructor takes an xml node for an exerciseType and set the id and name from it
       public ExerciseType(XmlNode xdoc)
         {
             id = xdoc.FirstChild.InnerText;

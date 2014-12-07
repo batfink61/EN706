@@ -205,7 +205,6 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserFactory.cs" />
-    <Compile Include="Validation.cs" />
     <Compile Include="Web References\en706\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

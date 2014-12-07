@@ -16,7 +16,7 @@ namespace SDW_Wellbeing
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-
+            
             int formError = 0;
             //Regex to check validity of email address
             Regex re = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$",
@@ -46,6 +46,7 @@ namespace SDW_Wellbeing
                 EmailError.Text = "Please enter a valid email address";
                 formError = 1;
             }
+            //Checks to see if email is already in the database
             else if (UserFactory.checkForUser(Email.Text))
             {
                 EmailError.Text = "This email address already has an account";

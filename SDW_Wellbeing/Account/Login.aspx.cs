@@ -19,7 +19,6 @@ namespace SDW_Wellbeing.Account
         protected void LoginButton_Click(object sender, EventArgs e)
         {
 
-
             int formError = 0;
             //Regex to check validity of email address
             Regex re = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$",
@@ -40,6 +39,7 @@ namespace SDW_Wellbeing.Account
                 EmailError.Text = "Please enter a valid email address";
                 formError = 1;
             }
+            //Check to see if email is in database
             else if ( ! UserFactory.checkForUser(UserID.Text))
             {
                 EmailError.Text = "Not recognised please check";
@@ -53,8 +53,10 @@ namespace SDW_Wellbeing.Account
                 formError = 1;
             }
        
+            //No errors
             if(formError == 0)
             {
+                //Verify uder and set cookie
                 if (UserFactory.VerifyUser(UserID.Text, Password.Text))
                 {
                     //FormsAuthentication.SetAuthCookie(UserID.Text, true);
