@@ -135,9 +135,10 @@ textarea {
     margin: 0;
 }
 
-label > .error
+label > .error, .error
 {
     color:Red;
+    font-weight:normal;
 }
 
 @media (max-width: 767px){
@@ -178,7 +179,7 @@ color: black;
 }
 
 .logo {
-    background-image: url("../img/nhs_logo.png");
+    background-image: url("../images/sdw_logo.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     float: right;

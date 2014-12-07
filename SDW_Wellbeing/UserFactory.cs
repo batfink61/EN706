@@ -19,7 +19,26 @@ namespace SDW_Wellbeing
             }
             else
             {
-                 return new User(xdoc);
+                return new User(xdoc);
+            }
+        }
+
+        //Bool funtion to check for a userId in the database
+        public static Boolean checkForUser(string userID)
+        {
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load("http://en706.remotestuff.co.uk/service.asmx/ReadUser?userid=" + userID);
+            
+            //if value is empty string then account does not exist else it does.
+            if (xdoc.InnerText == "")
+            {
+                //System.Diagnostics.Debug.WriteLine("false");
+                return false;
+            }
+            else
+            {
+                //System.Diagnostics.Debug.WriteLine("true");
+                return true;
             }
         }
 

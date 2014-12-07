@@ -22,6 +22,15 @@ namespace SDW_Wellbeing {
         protected global::System.Web.UI.WebControls.Label UserNameLabel;
         
         /// <summary>
+        /// UserNameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UserNameError;
+        
+        /// <summary>
         /// UserName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace SDW_Wellbeing {
         protected global::System.Web.UI.WebControls.Label EmailLabel;
         
         /// <summary>
+        /// EmailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmailError;
+        
+        /// <summary>
         /// Email control.
         /// </summary>
         /// <remarks>
@@ -47,15 +65,6 @@ namespace SDW_Wellbeing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Email;
-        
-        /// <summary>
-        /// EmailRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailRequired;
         
         /// <summary>
         /// PasswordLabel control.
@@ -67,6 +76,15 @@ namespace SDW_Wellbeing {
         protected global::System.Web.UI.WebControls.Label PasswordLabel;
         
         /// <summary>
+        /// PasswordError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PasswordError;
+        
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
@@ -74,15 +92,6 @@ namespace SDW_Wellbeing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
-        
-        /// <summary>
-        /// PasswordRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequired;
         
         /// <summary>
         /// ConfirmPasswordLabel control.
@@ -94,6 +103,15 @@ namespace SDW_Wellbeing {
         protected global::System.Web.UI.WebControls.Label ConfirmPasswordLabel;
         
         /// <summary>
+        /// ConfirmPasswordError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ConfirmPasswordError;
+        
+        /// <summary>
         /// ConfirmPassword control.
         /// </summary>
         /// <remarks>
@@ -101,24 +119,6 @@ namespace SDW_Wellbeing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
-        
-        /// <summary>
-        /// ConfirmPasswordRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConfirmPasswordRequired;
-        
-        /// <summary>
-        /// PasswordCompare control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator PasswordCompare;
         
         /// <summary>
         /// btnRegister control.

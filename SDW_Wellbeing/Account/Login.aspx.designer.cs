@@ -31,6 +31,15 @@ namespace SDW_Wellbeing.Account {
         protected global::System.Web.UI.WebControls.Label EmailLabel;
         
         /// <summary>
+        /// EmailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmailError;
+        
+        /// <summary>
         /// UserID control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace SDW_Wellbeing.Account {
         protected global::System.Web.UI.WebControls.Label PasswordLabel;
         
         /// <summary>
+        /// PasswordError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PasswordError;
+        
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
@@ -65,5 +83,14 @@ namespace SDW_Wellbeing.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button LoginButton;
+        
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Text.RegularExpressions;
 
 namespace SDW_Wellbeing.Account
 {
@@ -17,30 +18,68 @@ namespace SDW_Wellbeing.Account
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+
+
+            int formError = 0;
+            //Regex to check validity of email address
+            Regex re = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$",
+                  RegexOptions.IgnoreCase);
+            //reset error messages 
+            EmailError.Text = "";
+            //Set email to lowercase to avoid case errors
+            UserID.Text.ToLower();
+
+            //Email validation
             if (UserID.Text == "")
             {
-                validate.Attributes["class"] += " has-error";
-                EmailLabel.Text = "Exercise Name: Please enter a name";
-                
+                EmailError.Text = "Please enter a email address";
+                formError = 1;
             }
-            else if (Password.Text == "")
+            else if (!re.IsMatch(UserID.Text))
             {
+                EmailError.Text = "Please enter a valid email address";
+                formError = 1;
+            }
+            else if ( ! UserFactory.checkForUser(UserID.Text))
+            {
+                EmailError.Text = "Not recognised please check";
+                formError = 1;
             }
 
-            else if (UserFactory.VerifyUser(UserID.Text, Password.Text))
+            //Password Validation
+            if (Password.Text == "")
             {
-                //FormsAuthentication.SetAuthCookie(UserID.Text, true);
-
-                HttpCookie cookie = Request.Cookies["profile"];
-                if (cookie == null)
+                PasswordError.Text = "Please enter a password";
+                formError = 1;
+            }
+       
+            if(formError == 0)
+            {
+                if (UserFactory.VerifyUser(UserID.Text, Password.Text))
                 {
-                    cookie = new HttpCookie("profile");
-                }
-                cookie["name"] = UserID.Text;
-                Response.Cookies.Add(cookie);
+                    //FormsAuthentication.SetAuthCookie(UserID.Text, true);
 
-                FormsAuthentication.RedirectFromLoginPage(UserID.Text, false);
+                    HttpCookie cookie = Request.Cookies["profile"];
+                    if (cookie == null)
+                    {
+                        cookie = new HttpCookie("profile");
+                    }
+                    cookie["name"] = UserID.Text;
+                    Response.Cookies.Add(cookie);
+
+                    FormsAuthentication.RedirectFromLoginPage(UserID.Text, false);
+                }
+                else
+                {
+                    lblMessage.Text = "Credentials not recognised";
+                }
             }
+            else if(formError == 1)
+            {
+                lblMessage.Text = "Please check the form";
+            }
+
+
         }
 
         protected void UserID_TextChanged(object sender, EventArgs e)

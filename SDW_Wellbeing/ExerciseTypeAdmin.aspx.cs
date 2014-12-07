@@ -47,7 +47,7 @@ namespace SDW_Wellbeing
             if (ExerciseName.Text == "")
             {
                 validate.Attributes["class"] += " has-error";
-                addExercise.Text = "Exercise Name: Please enter a name";
+                ExerciseNameError.Text = "Please enter a name";
             }
             else
             {
@@ -67,7 +67,7 @@ namespace SDW_Wellbeing
             if (exerciseExists == 1)
             {
                 validate.Attributes["class"] += " has-error";
-                addExercise.Text = "Exercise Name: Exercise already exists";
+               ExerciseNameError.Text =  "Exercise already exists";
             }
             else
             {

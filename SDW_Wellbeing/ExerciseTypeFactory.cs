@@ -19,9 +19,10 @@ namespace SDW_Wellbeing
             ExerciseType[] exerciseArray = new ExerciseType[count];
 
             int i = 0;
+            //Create an array from all returned exercise type nodes
             foreach (XmlNode xdoc in exerciseListXML)
             {
-                System.Diagnostics.Debug.WriteLine(i);
+                //System.Diagnostics.Debug.WriteLine(i);
                 exerciseArray[i] = new ExerciseType(xdoc);     
                 i++;
             }

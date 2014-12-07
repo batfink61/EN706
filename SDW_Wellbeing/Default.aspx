@@ -18,32 +18,27 @@
                             <legend>Register</legend>
                        
                                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="control-label">User Name:</asp:Label>
+                                <asp:Label ID="UserNameError" runat="server" AssociatedControlID="UserName" CssClass="error"></asp:Label>
                                 <asp:TextBox ID="UserName" runat="server" CssClass="required form-control" ></asp:TextBox>
                                 
+
                                 <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">E-mail:</asp:Label>
+                                <asp:Label ID="EmailError" runat="server" AssociatedControlID="Email" CssClass="error"></asp:Label>
                                 <asp:TextBox ID="Email" runat="server" CssClass="textEntry form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" 
-                                     CssClass="failureNotification" ErrorMessage="E-mail is required." ToolTip="E-mail is required." 
-                                     ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                            
+                                
                             
                                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                <asp:Label ID="PasswordError" runat="server" AssociatedControlID="Password" CssClass="error"></asp:Label>
                                 <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry form-control" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
-                                     CssClass="failureNotification" ErrorMessage="Password is required." ToolTip="Password is required." 
-                                     ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                            
-                            
+                                
+                               
                                 <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword">Confirm Password:</asp:Label>
+                                <asp:Label ID="ConfirmPasswordError" runat="server" AssociatedControlID="ConfirmPassword" CssClass="error"></asp:Label>
                                 <asp:TextBox ID="ConfirmPassword" runat="server" CssClass="passwordEntry form-control" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ControlToValidate="ConfirmPassword" CssClass="failureNotification" Display="Dynamic" 
-                                     ErrorMessage="Confirm Password is required." ID="ConfirmPasswordRequired" runat="server" 
-                                     ToolTip="Confirm Password is required." ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                                <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" 
-                                     CssClass="failureNotification" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match."
-                                     ValidationGroup="RegisterUserValidationGroup">*</asp:CompareValidator>
+                            
+
                             <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn form-btn" onclick="btnRegister_Click"  />
-                            <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                            <asp:Label ID="lblMessage" runat="server" CssClass="error"></asp:Label>
 
                     </div>
 
