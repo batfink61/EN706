@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Home page.
+// Displays the main calendar with options to record weights/exercise
+// External health and wellbeing links are displayed too
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +18,7 @@ namespace SDW_Wellbeing
         {
         }
 
+        // Register new new
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             

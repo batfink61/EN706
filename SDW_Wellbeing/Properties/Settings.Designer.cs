@@ -26,7 +26,7 @@ namespace SDW_Wellbeing.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://en706.remotestuff.co.uk/service.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ec2-54-148-18-114.us-west-2.compute.amazonaws.com/service.asmx")]
         public string SDW_Wellbeing_en706_Service {
             get {
                 return ((string)(this["SDW_Wellbeing_en706_Service"]));

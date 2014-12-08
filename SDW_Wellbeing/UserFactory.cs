@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using System.Web.Security;
+using System.Configuration;
 
 namespace SDW_Wellbeing
 {
@@ -12,7 +13,9 @@ namespace SDW_Wellbeing
         public static User getUser(string userID)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load("http://en706.remotestuff.co.uk/service.asmx/ReadUser?userid="+ userID);
+            en706.Service srv = new en706.Service();
+
+            xdoc.Load(srv.ReadUser(userID).ToString());
             if (xdoc.SelectSingleNode("/userlist/user/id") == null)
             {
                 return null;
@@ -27,8 +30,8 @@ namespace SDW_Wellbeing
         public static Boolean checkForUser(string userID)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load("http://en706.remotestuff.co.uk/service.asmx/ReadUser?userid=" + userID);
-            
+            en706.Service srv = new en706.Service();
+            xdoc.LoadXml(srv.ReadUser(userID).OuterXml);            
             //if value is empty string then account does not exist else it does.
             if (xdoc.InnerText == "")
             {
@@ -42,11 +45,13 @@ namespace SDW_Wellbeing
             }
         }
 
+        // Verify password does not read password - simply pass user id and pw
+        // to web service and it returns boolean (0/1)
         public static Boolean VerifyUser(string userID, string passwd)
         {
             XmlDocument xdoc = new XmlDocument();
-
-            xdoc.Load(String.Format("http://en706.remotestuff.co.uk/service.asmx/VerifyPassword?userId={0}&password={1}", userID, passwd));
+            en706.Service srv = new en706.Service();
+            xdoc.LoadXml(srv.VerifyPassword(userID,passwd).OuterXml);
             if (xdoc.SelectSingleNode("/response").InnerText == "1" )
             {
                 return true;
@@ -58,6 +63,7 @@ namespace SDW_Wellbeing
 
         }
 
+        // Create user uses the web service to write new user details
         public static bool CreateUser(String userName, String email, String password)
         {
             en706.Service svc = new en706.Service();

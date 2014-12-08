@@ -1,29 +1,4 @@
-U:\My Documents\System Development Workshop\Group Project\Code\SDW_Wellbeing\SDW_Wellbeing\bin\SDW_Wellbeing.dll
-U:\My Documents\System Development Workshop\Group Project\Code\SDW_Wellbeing\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
-U:\My Documents\System Development Workshop\Group Project\Code\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
-U:\My Documents\System Development Workshop\Group Project\Code\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
-U:\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
-U:\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
-U:\SDW_Wellbeing\SDW_Wellbeing\bin\SDW_Wellbeing.dll
-U:\SDW_Wellbeing\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
-U:\SDW_Wellbeing\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
-U:\GitHub\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
-U:\GitHub\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
-U:\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
-U:\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
-U:\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
-U:\My Documents\computer_science\sdw\group\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
-U:\My Documents\computer_science\sdw\group\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
-U:\My Documents\computer_science\sdw\group\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
-U:\My Documents\computer_science\sdw\group\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
-U:\My Documents\computer_science\sdw\group\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.csprojResolveAssemblyReference.cache
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
-U:\My Documents\System Development Workshop\Group Project\Code\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb
+C:\U\GitHub\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.dll
+C:\U\GitHub\EN706\SDW_Wellbeing\bin\SDW_Wellbeing.pdb
+C:\U\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.dll
+C:\U\GitHub\EN706\SDW_Wellbeing\obj\Debug\SDW_Wellbeing.pdb

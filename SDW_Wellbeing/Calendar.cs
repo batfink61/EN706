@@ -40,7 +40,7 @@ namespace SDW_Wellbeing
 
             // Populate events with weighing data for the current user
             xdoc = svc.ReadWeight(_userId, ConfigurationManager.AppSettings["startdate"].ToString(), ConfigurationManager.AppSettings["enddate"].ToString());
-            foreach (XmlNode nd in xdoc.SelectNodes("exercise"))
+            foreach (XmlNode nd in xdoc.SelectNodes("weight"))
             {
                 WeighingSession session = new WeighingSession(nd);
                 _events.Add(session);

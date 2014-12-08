@@ -24,9 +24,7 @@ namespace SDW_Wellbeing
                 _userCalendar = new EventCalendar(Request.Cookies["profile"]["name"]);
                 RefreshSummary();
             }
-            catch (Exception ex)
-            {
-            }
+            catch (Exception) { }
         }
 
         protected void Calendar_SelectionChanged(object sender, EventArgs e)
@@ -60,14 +58,13 @@ namespace SDW_Wellbeing
                     e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#e2e8ee");
                 }
             }
-            catch (Exception ex)
-            {
-            }
+            catch (Exception) { }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string f = "1";
+
         }
     }
 }

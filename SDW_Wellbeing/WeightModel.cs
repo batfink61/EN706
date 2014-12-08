@@ -23,14 +23,21 @@ namespace SDW_Wellbeing
                 return instance;
             }
         }
+
         private WeightModel()
         {
         }
+
+        // Weightlist is a list of weight objects
+        // in most cases, for a date range
         private List<Weight> weightList= new List<Weight>();
+
+        // returns a list of weight records for a date range
         public List<Weight> getWeight(string userID, string fromDate, string toDate)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(String.Format("http://en706.remotestuff.co.uk/service.asmx/ReadWeight?userId={0}&fromDate={1}&toDate={2}", userID, fromDate, toDate));
+            en706.Service srv = new en706.Service();
+            xdoc.LoadXml(srv.ReadWeight(userID, fromDate, toDate).OuterXml);
             if (xdoc.SelectNodes("/weightlist/weight") == null)
             {
                 return null;
@@ -41,7 +48,7 @@ namespace SDW_Wellbeing
             }
         }
 
-        public List<Weight> getWeightList(XmlDocument xdoc)
+        private List<Weight> getWeightList(XmlDocument xdoc)
         {
             XmlNodeList nodes = xdoc.SelectNodes("/weightlist/weight");
             foreach (XmlNode node in nodes) {
@@ -53,6 +60,7 @@ namespace SDW_Wellbeing
             return weightList;
         }
 
+        // return a list of weight values. Comma separated.
         public String getValueList()
         {
             String listOfWeights = "";
@@ -66,6 +74,8 @@ namespace SDW_Wellbeing
             }
             return listOfWeights;
         }
+
+        // return a list of date values. Comma separated.
         public String getDatesList()
         {
             String listOfDates = "";
@@ -88,11 +98,14 @@ namespace SDW_Wellbeing
             }
             return weightsDates;
         }
+
         public List<Weight> SortAscending(List<Weight> list)
         {
             list.Sort((a, b) => b.date.CompareTo(a.date));
             return list;
         }
+
+        // Save weight for a given user
         public bool SaveWeight(String userId, String weightDate, int weight)
         {
             en706.Service svc = new en706.Service();

@@ -1,0 +1,4 @@
+C:\U\GitHub\EN706\SDW_Wellbeing\bin\x86\Debug\SDW_Wellbeing.dll
+C:\U\GitHub\EN706\SDW_Wellbeing\bin\x86\Debug\SDW_Wellbeing.pdb
+C:\U\GitHub\EN706\SDW_Wellbeing\obj\x86\Debug\SDW_Wellbeing.dll
+C:\U\GitHub\EN706\SDW_Wellbeing\obj\x86\Debug\SDW_Wellbeing.pdb

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SDW_Wellbeing_en706_Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://en706.remotestuff.co.uk/service.asmx</Value>
+      <Value Profile="(Default)">http://ec2-54-148-18-114.us-west-2.compute.amazonaws.com/service.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

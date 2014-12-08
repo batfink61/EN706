@@ -1,4 +1,7 @@
-﻿using System;
+﻿// User login form
+// Verifies user who is already registered
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +16,6 @@ namespace SDW_Wellbeing.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //RegisterHyperLink.NavigateUrl = "Register.aspx?ReturnUrl=" + HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -59,8 +61,6 @@ namespace SDW_Wellbeing.Account
                 //Verify uder and set cookie
                 if (UserFactory.VerifyUser(UserID.Text, Password.Text))
                 {
-                    //FormsAuthentication.SetAuthCookie(UserID.Text, true);
-
                     HttpCookie cookie = Request.Cookies["profile"];
                     if (cookie == null)
                     {

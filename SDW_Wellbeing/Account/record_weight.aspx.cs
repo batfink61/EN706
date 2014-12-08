@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Record user weight
+// This form records a single instance of weight for the current user
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +20,7 @@ namespace SDW_Wellbeing.Account
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            // Verify data before saving
             int weight;
             DateTime tmp;
             if (txtDate.Text == "")
@@ -37,6 +41,8 @@ namespace SDW_Wellbeing.Account
             }
             else 
             {
+                // Save weight using EN706 web service
+                // Default user details taken from cookie
                 bool ok = WeightModel.Instance.SaveWeight(Request.Cookies["profile"]["name"], txtDate.Text, Int32.Parse(txtWeight.Text));
                 if (ok)
                 {

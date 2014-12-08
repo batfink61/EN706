@@ -30,7 +30,8 @@ namespace SDW_Wellbeing
         public List<Exercise> getExercise(string userID, string fromDate, string toDate)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(String.Format("http://en706.remotestuff.co.uk/service.asmx/ReadExercise?userId={0}&fromDate={1}&toDate={2}", userID, fromDate, toDate));
+            en706.Service srv = new en706.Service();
+            xdoc.LoadXml(srv.ReadExercise(userID, fromDate,toDate).OuterXml);
             if (xdoc.SelectNodes("/exerciselist/exercise") == null)
             {
                 return null;
