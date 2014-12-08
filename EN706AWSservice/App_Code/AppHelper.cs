@@ -1,5 +1,5 @@
 ﻿// The AppHelper class contains all shared functions.
-
+// 
 using System;
 using System.Data;
 using System.Configuration;

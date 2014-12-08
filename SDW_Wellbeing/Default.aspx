@@ -7,8 +7,13 @@
     <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-    <h1>Welcome, activity logger</h1>
-    <p>Posuere tellus tempus at ullamcorper amet in praesent varius ipsum mi mi adipiscing porttitor. Dolor lacinia id in varius donec diam egestas tempus. Viverra facilisis pellentesque at egestas facilisis metus orci tellus sollicitudin. Mi hendrerit iaculis viverra facilisis enim hendrerit id id ultrices at posuere tincidunt tempus facilisis ligul a. Tempus id hendrerit id morbi diam amet dolor hendrerit viverra dignissim praesent.    
+    <h1>Wellbeing Portal</h1>
+    <p>Welcome to your Wellbeing Portal.<br />
+    You can register on-line and use this portal to access health and wellbeing information<br />
+    as well as managing your own progress. You will be able to track your own exercise and weight trends<br />
+    and compare these with recomendations published by the NHS.<br />
+    You will also be able to share your progress with a healthcare professional and book an <br />
+    appointment to review your progress.
     </p>
   </div>
   <div class="col-md-6">
