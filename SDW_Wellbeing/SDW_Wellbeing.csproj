@@ -243,10 +243,13 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://ec2-54-148-18-114.us-west-2.compute.amazonaws.com/">
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ec2-54-148-54-27.us-west-2.compute.amazonaws.com/">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\en706\</RelPath>
-      <UpdateFromURL>http://ec2-54-148-18-114.us-west-2.compute.amazonaws.com/</UpdateFromURL>
+      <UpdateFromURL>http://ec2-54-148-54-27.us-west-2.compute.amazonaws.com/</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -254,9 +257,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>SDW_Wellbeing_en706_Service</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

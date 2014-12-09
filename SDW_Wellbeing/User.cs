@@ -1,4 +1,6 @@
-﻿using System;
+﻿// User class defines instance of a user
+// Instantiated using the UserFactory
+//using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
