@@ -5,6 +5,10 @@ using System.Web;
 using System.Xml;
 namespace SDW_Wellbeing
 {
+    /// <summary>
+    /// The Weight Model class provides a higher level unified model interface to the Web Service
+    /// uses the FACADE PATTERN
+    /// </summary>
     public class WeightModel
     {
 

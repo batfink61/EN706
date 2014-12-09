@@ -13,15 +13,6 @@ namespace SDW_Wellbeing.Account {
     public partial class ExerciseManagement {
         
         /// <summary>
-        /// userID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userID;
-        
-        /// <summary>
         /// fromDate control.
         /// </summary>
         /// <remarks>

@@ -6,6 +6,10 @@ using System.Xml;
 
 namespace SDW_Wellbeing
 {
+    /// <summary>
+    /// The Exercise Model class provides a higher level unified model interface to the Web Service
+    /// uses the FACADE PATTERN
+    /// </summary>
     public class ExerciseModel
     {
             ///////////////////

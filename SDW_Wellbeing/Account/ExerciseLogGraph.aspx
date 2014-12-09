@@ -116,15 +116,10 @@ $(function () {
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<!--Testing-->
+
  <fieldset>
 			<legend>View Exercise Log/Graph</legend>
-            <!--
-			<div>
-				<label for="name">UserID: </label>&nbsp;<asp:TextBox ID="userID" runat="server"></asp:TextBox>
-			</div>
-            -->
-			<div>
+           <div>
 				<label for="email">From Date: </label>
                 &nbsp;<asp:TextBox ID="fromDate" runat="server" ></asp:TextBox>
                 <img alt="click me" src="../images/calendar_information.png" onclick="displayCalendar()" />
@@ -152,7 +147,7 @@ $(function () {
             <br />
             <div>
                 <%=dateExerciseTable %>
-                <asp:Label ID="message" runat="server"></asp:Label>
+                <asp:Label ID="message" runat="server" ForeColor="Red"></asp:Label>
              </div>
             
             <%=graph%>

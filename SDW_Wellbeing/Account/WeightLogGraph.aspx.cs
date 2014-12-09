@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace SDW_Wellbeing
 {
+    //Generates both a Weight diary and a graph for the weights
     public partial class WebForm1 : System.Web.UI.Page
     {
         public String weightList="";
@@ -19,7 +20,7 @@ namespace SDW_Wellbeing
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //userID.Text = Request.Cookies["profile"]["name"];
+           
         }
         protected void calEventDate_SelectionChanged(object sender, EventArgs e)
         {
@@ -31,18 +32,36 @@ namespace SDW_Wellbeing
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            List<Weight> weightLists = WeightModel.Instance.getWeight(Request.Cookies["profile"]["name"], fromDate.Text, toDate.Text);            
-            if (weightLists != null)
+            //Validation Code
+            if (fromDate.Text == "")
             {
-                weightList = WeightModel.Instance.getValueList();
-                dateList = WeightModel.Instance.getDatesList();
-                dateWeightTable = beginTable + WeightModel.Instance.getList() + endTable;
-                graph = "<div id='Div2' style='min-width: 310px; height: 400px; margin: 0 auto'></div>";
-
+                message1.Text = "Please enter a value for the 'from date'";
+            }
+            else if (toDate.Text == "")
+            {
+                message1.Text = "Please enter value for the 'to date'weight";
             }
             else
             {
-                message.Text = "No Weight Information";
+                //Get list of weights
+                List<Weight> weightLists = WeightModel.Instance.getWeight(Request.Cookies["profile"]["name"], fromDate.Text, toDate.Text);
+                if (weightLists != null)
+                {
+                    //Generate json data for graph
+                    weightList = WeightModel.Instance.getValueList();
+                    dateList = WeightModel.Instance.getDatesList();
+
+                    //Generate diary information
+                    dateWeightTable = beginTable + WeightModel.Instance.getList() + endTable;
+
+                    //Generate html/css style for graph
+                    graph = "<div id='Div2' style='min-width: 310px; height: 400px; margin: 0 auto'></div>";
+
+                }
+                else
+                {
+                    message.Text = "No Weight Information";
+                }
             }
         }
     }

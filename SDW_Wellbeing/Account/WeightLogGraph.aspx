@@ -152,9 +152,10 @@ $(function () {
             <div><asp:Button ID="Button1" runat="server" Text="OK" CssClass="btn form-btn" onclick="Button1_Click" /></div>
             <br />
             <div>
-            <%=dateWeightTable %>
+                <%=dateWeightTable %>
             <!--<asp:TextBox ID="message" runat="server" Height="151px" TextMode="MultiLine" 
                         Width="362px"></asp:TextBox>-->
+                <asp:Label ID="message1" runat="server" ForeColor="Red" Text="message"></asp:Label>
              </div>
             
             <%=graph%>

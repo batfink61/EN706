@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SDW_Wellbeing.Account
 {
+    //Generates both an Exercise diary and a graph for the exercises
     public partial class ExerciseManagement : System.Web.UI.Page
     {
         public String durationList = "";
@@ -18,7 +19,6 @@ namespace SDW_Wellbeing.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //userID.Text = Request.Cookies["profile"]["name"];
         }
         protected void calEventDate_SelectionChanged(object sender, EventArgs e)
         {
@@ -30,18 +30,36 @@ namespace SDW_Wellbeing.Account
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            List<Exercise> exerciseLists = ExerciseModel.Instance.getExercise(Request.Cookies["profile"]["name"], fromDate.Text, toDate.Text);
-            if (exerciseLists != null)
+            //Validation Code
+            if (fromDate.Text == "")
             {
-                durationList = ExerciseModel.Instance.getDurationList();
-                dateList = ExerciseModel.Instance.getDatesList();
-                dateExerciseTable = beginTable + ExerciseModel.Instance.getList() + endTable;
-                graph = "<div id='Div3' style='min-width: 310px; height: 400px; margin: 0 auto'></div>";
-
+                message.Text = "Please enter a value for the 'from date'";
+            }
+            else if (toDate.Text == "")
+            {
+                message.Text = "Please enter value for the 'to date'weight";
             }
             else
             {
-                message.Text = "No Exercise Information";
+                //Get list of exercises
+                List<Exercise> exerciseLists = ExerciseModel.Instance.getExercise(Request.Cookies["profile"]["name"], fromDate.Text, toDate.Text);
+                if (exerciseLists != null)
+                {
+                    //Generate json data for graph
+                    durationList = ExerciseModel.Instance.getDurationList();
+                    dateList = ExerciseModel.Instance.getDatesList();
+
+                    //Generate diary information
+                    dateExerciseTable = beginTable + ExerciseModel.Instance.getList() + endTable;
+
+                    //Generate html/css style for graph
+                    graph = "<div id='Div3' style='min-width: 310px; height: 400px; margin: 0 auto'></div>";
+
+                }
+                else
+                {
+                    message.Text = "No Exercise Information";
+                }
             }
         }
     }
